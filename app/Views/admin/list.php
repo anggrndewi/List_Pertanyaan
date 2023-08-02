@@ -29,7 +29,7 @@
                                     <td><?= $list->pertanyaan ?></td>
                                     <td><?= $list->jawaban ?></td>
                                     <td>
-                                        <a href="" class="btn btn-warning d-block mb-1"><ion-icon name="pencil-outline"></ion-icon></a>
+                                        <a href="<?= '/admin/ubah/'.$list->id ?>" class="btn btn-warning d-block mb-1"><ion-icon name="pencil-outline"></ion-icon></a>
                                         <a href="<?= '/admin/delete/'.$list->id ?>" class="btn btn-danger d-block"><ion-icon name="trash-outline"></ion-icon></a>
                                     </td>
                                 </tr>
