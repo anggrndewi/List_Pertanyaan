@@ -7,7 +7,7 @@
           </div>
       <form  action="<?php echo base_url('search')?>" action="GET">
         <div class="input-group mb-3">
-          <input type="text" name="search" class="form-control" placeholder="Cari Pertanyaan" aria-label="search" aria-describedby="button-addon2">
+          <input required type="text" name="search" class="form-control" placeholder="Cari Pertanyaan" aria-label="search" aria-describedby="button-addon2">
           <button class="btn btn-primary" type="submit" id="button-addon2" value="Search">Submit </button>
         </div>
       </form>
