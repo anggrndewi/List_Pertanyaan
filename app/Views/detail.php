@@ -1,4 +1,4 @@
-<div class="container mt-2">
+<div class="container mt-2 mb-3">
   <div class="row">
     <div class="col">
       <div class="card shadow mt-3">
@@ -14,6 +14,21 @@
           <div class="d-flex justify-content-end">
             <a class="btn btn-primary" onclick="copyToClipboard()"><ion-icon name="documents"></ion-icon> Salin</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <div class="card shadow mt-3">
+        <div class="card-body">
+          <p>Cari lagi...</p>
+          <form  action="<?php echo base_url('search')?>" action="GET">
+            <div class="input-group mb-3">
+              <input type="text" name="search" class="form-control" placeholder="Cari Pertanyaan" aria-label="search" aria-describedby="button-addon2">
+              <button class="btn btn-primary" type="submit" id="button-addon2" value="Search">Submit </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
