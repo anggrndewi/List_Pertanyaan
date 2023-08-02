@@ -33,6 +33,8 @@ $routes->get('/', 'Saku::index');
 
 // Admin
 $routes->get('/admin', 'Home::index');
+$routes->get('/admin/delete/(:num)', 'Home::delete/$1');
+$routes->post('/admin/tambah', 'Home::tambah');
 
 /*
  * --------------------------------------------------------------------
