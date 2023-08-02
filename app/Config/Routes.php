@@ -31,6 +31,9 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Saku::index');
 
+// Admin
+$routes->get('/admin', 'Home::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
