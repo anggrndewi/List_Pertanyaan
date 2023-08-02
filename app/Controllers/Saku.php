@@ -28,7 +28,7 @@ class Saku extends BaseController
         $data = ['saku' => $saku->WHERE('id', $id)->find()];
 
         echo view('layout/header');
-        return view('detail',  compact('data'));
+        echo view('detail', $data);
         echo View('layout/footer');  
 
     }
