@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\sakuModel;
 
 class Saku extends BaseController
 {
@@ -11,8 +12,24 @@ class Saku extends BaseController
         echo view('layout/footer');
 	}
 
-    public function lihat()
+    public function search()
     {
+        $saku = new sakuModel();
+        $search = $this->request->getGet('search');
+        $data = $saku->like('pertanyaan', $search)-> orlike('jawaban', $search)->findAll();
+        // echo $search;
+        return view('hasil_pencarian',  compact('data'));
+    }
+
+    public function detail($id=NULL)
+    {
+        $saku = new sakuModel();
         
+        $data = ['saku' => $saku->WHERE('id', $id)->find()];
+
+        echo view('layout/header');
+        return view('detail',  compact('data'));
+        echo View('layout/footer');  
+
     }
 }

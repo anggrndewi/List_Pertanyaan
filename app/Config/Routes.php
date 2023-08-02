@@ -30,6 +30,11 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Saku::index');
+// File: app/Config/Routes.php
+
+// $routes->get('search/(:num)', 'Saku::search/$1'); // Menentukan rute untuk URL 'Saku/search'
+$routes->get('/search', 'Saku::search/$1'); 
+$routes->get('/detail/(:any)', 'Saku::detail/$1');
 
 // Admin
 $routes->get('/admin', 'Home::index');
