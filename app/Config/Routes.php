@@ -38,6 +38,10 @@ $routes->get('/detail/(:any)', 'Saku::detail/$1');
 
 // Admin
 $routes->get('/admin', 'Home::index');
+$routes->get('/admin/delete/(:num)', 'Home::delete/$1');
+$routes->post('/admin/tambah', 'Home::tambah');
+$routes->get('/admin/ubah/(:num)', 'Home::ubah/$1');
+$routes->post('/admin/ubah', 'Home::presUbah');
 
 /*
  * --------------------------------------------------------------------
