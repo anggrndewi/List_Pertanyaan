@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pencarian Google</title>
     <link href="<?= base_url('css/bootstrap.min.css') ?>" rel="stylesheet" />
+    <link href="<?= base_url().'img/lampung cerdas.webp' ?>" rel="icon">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet" />
     <link href="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-1.13.6/datatables.min.css" rel="stylesheet">
   
@@ -66,27 +67,40 @@
 <div class="container mt-2">
         <div class="row">
             <div class="col">
-                <?php foreach($data as $data) {?>
-                    <a href="<?= '/detail/'.$data['id'] ?>">
-                    <div class="card shadow mt-3">
-                        <div class="card-header bg-primary">
-                            <div class="d-flex">
-                                <h2 class='text-light'>
-                                    
-                                        <?= $data['pertanyaan'] ?>
-                                        <i class="fa fa-arrow-right"></i>
-                                    
-                                </h2>
+                <?php if (count($data) > 0) {
+                    foreach ($data as $data) { ?>
+                        <a href="<?= '/detail/' . $data['id'] ?>">
+                            <div class="card shadow mt-3">
+                                <div class="card-header bg-primary">
+                                    <div class="d-flex">
+                                        <h2 class='text-light'><?= $data['pertanyaan'] ?><i class="fa fa-arrow-right"></i></h2>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <p><?= substr($data['jawaban'], 0, 100) . '...'; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                <?php
+                    }
+                } else { ?>
+                        <div class="card shadow mt-3">
+                            <div class="card bg-primary">
+                                <div class="d-flex justify-content-center">
+                                    <h2 class='text-light'>Tidak ada data yang ditemukan<i class="fa fa-arrow-right"></i></h2>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center">
+                                    <p>Coba kata kunci yang lain</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div class="d-flex">
-                                <p><?= substr($data['jawaban'], 0, 100) . '...'; ?></p> 
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                <?php } ?>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
